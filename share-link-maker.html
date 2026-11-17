@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Share &amp; Save Link Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eec584;--ink:#0d0d0d;--card:#fff8ea;--line:#0d0d0d;--green:#5a9a38;--red:#d63a2f;--yellow:#f3d542;--orange:#e0702b;--muted:#4b3a22;--bad:#b3261e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1710;--ink:#f6e3bf;--card:#2b2217;--line:#eec584;--green:#7fc45a;--red:#e8584d;--muted:#cdb68a;--bad:#ff9b92}}
+:root[data-theme="dark"]{--bg:#1d1710;--ink:#f6e3bf;--card:#2b2217;--line:#eec584;--green:#7fc45a;--red:#e8584d;--muted:#cdb68a;--bad:#ff9b92}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.45}
+main{max-width:760px;margin:0 auto;padding:36px 20px 60px}
+.shophead{margin:0 0 28px;padding-bottom:16px;border-bottom:3px solid var(--line)}
+.wm{display:flex;align-items:center;gap:12px;font-family:Archivo,system-ui,sans-serif;font-weight:700;font-size:clamp(2.2rem,9vw,3.1rem);letter-spacing:-.03em;line-height:1}
+.wm svg{width:.72em;height:.72em;flex:none}
+.sub{margin-top:8px;color:var(--muted);font-weight:500}
+h1{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;font-size:clamp(2.2rem,9vw,4.4rem);line-height:.95;letter-spacing:-.02em;margin:0 0 16px;text-transform:uppercase}
+h1 .ck{display:inline-block;width:.62em;height:.62em;border:.09em solid var(--green);border-radius:3px;position:relative;vertical-align:-.02em;margin-left:.12em}
+h1 .ck::after{content:"";position:absolute;left:.1em;top:-.2em;width:.2em;height:.5em;border:solid var(--green);border-width:0 .14em .14em 0;transform:rotate(40deg)}
+p.lead{margin:0 0 26px;font-size:1.08rem;font-weight:500;max-width:52ch}
+.box{background:var(--card);border:3px solid var(--line);border-radius:14px;padding:18px;box-shadow:6px 6px 0 var(--line)}
+label{display:block;font-weight:700;margin:0 0 6px}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--ink);background:transparent;border:2px solid var(--line);border-radius:8px;padding:10px}
+textarea{min-height:120px;resize:vertical}
+textarea:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.shop{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.shop input{max-width:180px}
+.shop span{color:var(--muted);font-weight:500}
+.out{margin-top:26px}
+.item{background:var(--card);border:3px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ckb{flex:0 0 24px;height:24px;border:3px solid var(--green);border-radius:3px;position:relative}
+.ckb::after{content:"";position:absolute;left:4px;top:-9px;width:8px;height:20px;border:solid var(--green);border-width:0 5px 5px 0;transform:rotate(40deg);opacity:0}
+.item.checked .ckb::after{opacity:1}
+.item code{flex:1 1 240px;word-break:break-all;font-size:.95rem}
+.item.err{border-style:dashed;color:var(--bad)}
+button{font:inherit;font-family:"Archivo Black",Impact,sans-serif;cursor:pointer;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:9px 20px;box-shadow:3px 3px 0 var(--line)}
+button.alt{background:transparent;color:var(--ink)}
+.row{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.hint{color:var(--muted);font-size:.95rem;margin-top:22px;font-weight:500}
+@media (prefers-reduced-motion:no-preference){button{transition:transform .08s,box-shadow .08s}button:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--line)}}
+</style>
+</head>
+<body>
+<main>
+<header class="shophead">
+<div class="wm">honkplease<svg viewBox="0 0 28 28" role="img" aria-label="Star Seller" xmlns="http://www.w3.org/2000/svg"><rect x="4.5" y="4.5" width="19" height="19" rx="4" fill="#9b4f98"/><rect x="4.5" y="4.5" width="19" height="19" rx="4" fill="#9b4f98" transform="rotate(45 14 14)"/><polygon fill="#fff" points="14,8.2 15.7,12 19.8,12.4 16.7,15.1 17.7,19.2 14,17 10.3,19.2 11.3,15.1 8.2,12.4 12.3,12"/></svg></div>
+<div class="sub">Etsy shop</div>
+</header>
+<h1>Share &amp; Save<span class="ck" aria-hidden="true"></span><br>link maker<span class="ck" aria-hidden="true"></span></h1>
+<p class="lead">Paste any listing link from the Honkplease shop. You get the clean Share &amp; Save link for that listing.</p>
+
+<div class="box">
+<label for="in">Listing links (one per line)</label>
+<textarea id="in" placeholder="https://www.etsy.com/listing/4608239968/feral-but-thankful-shirt-grunge-raccoon?ref=shop_home_active_1"></textarea>
+<div class="row"><button id="go">Make links</button><button class="alt" id="clear">Clear</button></div>
+</div>
+
+<div class="out" id="out" aria-live="polite"></div>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var inEl=$("in"),outEl=$("out"),SHOP="honkplease";
+
+function clean(raw,shop){
+  var t=raw.trim();
+  if(!t)return null;
+  var h=t.match(/^(?:https?:\/\/)?([a-z0-9-]+)\.etsy\.com\//i);
+  if(h&&h[1].toLowerCase()!=="www"&&h[1].toLowerCase()!==shop)return {err:"This tool only works for the "+shop+" shop: "+t};
+  var m=t.match(/\/listing\/(\d{6,})(?:\/([^\/?#\s]+))?/i);
+  if(!m)return {err:"No listing found in: "+t};
+  return {url:"https://"+shop+".etsy.com/listing/"+m[1]+(m[2]?"/"+m[2]:"")};
+}
+function copy(text,btn,els){
+  function done(){els.forEach(function(e){e.classList.add("checked");setTimeout(function(){e.classList.remove("checked")},5000)});var o=btn.textContent;btn.textContent="Copied";setTimeout(function(){btn.textContent=o},1400)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done,function(){fallback()});
+  }else fallback();
+  function fallback(){
+    var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");done()}catch(e){btn.textContent="Press Ctrl+C"}
+    document.body.removeChild(ta);
+  }
+}
+function run(){
+  var shop=SHOP;
+  outEl.innerHTML="";
+  var good=[],goodEls=[];
+  inEl.value.split(/\n+/).forEach(function(line){
+    var r=clean(line,shop);
+    if(!r)return;
+    var d=document.createElement("div");
+    if(r.err){d.className="item err";d.textContent=r.err}
+    else{
+      good.push(r.url);goodEls.push(d);
+      d.className="item";
+      var c=document.createElement("code");c.textContent=r.url;
+      var b=document.createElement("button");b.textContent="Copy";
+      b.onclick=function(){copy(r.url,b,[d])};
+      var k=document.createElement("span");k.className="ckb";d.appendChild(k);d.appendChild(c);d.appendChild(b);
+    }
+    outEl.appendChild(d);
+  });
+  if(good.length>1){
+    var all=document.createElement("button");all.textContent="Copy all "+good.length+" links";
+    all.onclick=function(){copy(good.join("\n"),all,goodEls)};
+    outEl.appendChild(all);
+  }
+  if(!outEl.children.length)outEl.innerHTML='<p class="hint">Paste a link first.</p>';
+}
+$("go").onclick=run;
+$("clear").onclick=function(){inEl.value="";outEl.innerHTML="";inEl.focus()};
+})();
+</script>
+</body>
+</html>
